@@ -26,7 +26,7 @@ plan.simpleButton('Get plan!', 'd', {
         res.meals.forEach((item) => meals.push(item));
       })
       .catch((err) => {
-        next(err);
+        console.log(err);
       });
 
     for (let i = 0; i < 3; i++) {
