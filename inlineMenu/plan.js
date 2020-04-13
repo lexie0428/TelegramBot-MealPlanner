@@ -5,7 +5,7 @@ const TelegrafInlineMenu = require('telegraf-inline-menu');
 const plan = new TelegrafInlineMenu(`For getting daily plan for you - click the button`);
 plan.setCommand('get_plan');
 plan.simpleButton('Get plan!', 'd', {
-  doFunc: async (ctx) => {
+  doFunc: async (ctx, next) => {
     const user = await User.findOne({ telegramId: ctx.chat.id });
     const hrefs = [];
     const meals = [];
