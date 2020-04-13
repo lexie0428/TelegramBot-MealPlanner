@@ -42,7 +42,7 @@ plan.simpleButton('Get plan!', 'd', {
           hrefs.push(res.sourceUrl);
         })
         .catch(err => {
-          next(err);
+          console.log(err);
         });
     }
     ctx.replyWithHTML(`<strong>Breakfast</strong>\n` +
