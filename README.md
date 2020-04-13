@@ -14,3 +14,5 @@ Telegram bot for making an individual daily nutrition plan taking into account t
 npm start
 
 ```
+## Автор
+[Александра Барышникова](https://github.com/lexie0428)
