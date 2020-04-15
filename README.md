@@ -7,8 +7,12 @@ Telegram bot for making an individual daily nutrition plan taking into account t
 
 ## Before you start
 after clone create .env file with
+
+```
 - BOT_TOKEN - you need get get token from BotFather;
 - API_KEY - spoonacular/api/recipe-food-nutrition.
+
+```
 
 ## Start:
 ```
