@@ -1,11 +1,12 @@
 const fetch = require('cross-fetch');
-const User = require('../models/user');
 const TelegrafInlineMenu = require('telegraf-inline-menu');
+const User = require('../models/user');
+require('dotenv').config();
 
-const plan = new TelegrafInlineMenu(`For getting daily plan for you - click the button`);
+const plan = new TelegrafInlineMenu('For getting daily plan for you - click the button');
 plan.setCommand('get_plan');
 plan.simpleButton('Get plan!', 'd', {
-  doFunc: async (ctx, next) => {
+  doFunc: async (ctx) => {
     const user = await User.findOne({ telegramId: ctx.chat.id });
     const hrefs = [];
     const meals = [];
@@ -16,7 +17,7 @@ plan.simpleButton('Get plan!', 'd', {
         method: 'GET',
         headers: {
           'x-rapidapi-host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-          'x-rapidapi-key': '99d2bc2f27msh29e5bdde481eea8p1947abjsnb6872fabc5dd'
+          'x-rapidapi-key': `${process.env.API_KEY}`,
         }
       }
     )
@@ -34,7 +35,7 @@ plan.simpleButton('Get plan!', 'd', {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-          "x-rapidapi-key": "99d2bc2f27msh29e5bdde481eea8p1947abjsnb6872fabc5dd"
+          "x-rapidapi-key": `${process.env.API_KEY}`,
         }
       })
         .then(async (response) => {
