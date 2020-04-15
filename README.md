@@ -15,3 +15,5 @@ after clone create .env file with
 npm start
 
 ```
+## Author
+[Aleksandra Baryshnikova](https://github.com/lexie0428)
